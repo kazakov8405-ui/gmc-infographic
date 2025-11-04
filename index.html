@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гайд: Google Merchant Center и Performance Max</title>
+    <title>Инфографика: Google Merchant Center и PMax</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -12,36 +12,38 @@
         }
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-        
         .tailwind-color-primary { color: #004AAD; }
         .tailwind-bg-primary { background-color: #004AAD; }
         .tailwind-color-secondary { color: #0076CE; }
         .tailwind-bg-secondary { background-color: #0076CE; }
-        .tailwind-color-accent1 { color: #3498DB; }
-        .tailwind-bg-accent1 { background-color: #3498DB; }
-        .tailwind-color-accent2 { color: #6BB8E7; }
-        .tailwind-bg-accent2 { background-color: #6BB8E7; }
+        .tailwind-color-accent { color: #64CCC5; }
+        .tailwind-bg-accent { background-color: #64CCC5; }
+
+        .step-bubble {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            margin: 1.5rem auto;
+        }
 
         .gemini-loader {
             border: 4px solid #f3f3f3;
             border-top: 4px solid #004AAD;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             animation: spin 1s linear infinite;
             margin: 20px auto;
         }
@@ -55,298 +57,267 @@
 
     <header class="tailwind-bg-primary text-white p-8 text-center shadow-lg">
         <h1 class="text-3xl md:text-4xl font-bold mb-2">Гайд: Google Merchant Center и Performance Max</h1>
-        <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90">От регистрации аккаунта до запуска эффективной Performance Max кампании для вашего интернет-магазина.</p>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90">От регистрации до запуска первой PMax кампании (Урок 4.3)</p>
     </header>
 
     <main class="max-w-7xl mx-auto p-4 md:p-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
 
-            <section class="md:col-span-2 bg-white rounded-lg shadow-xl p-6 md:p-8">
-                <h2 class="text-2xl font-bold tailwind-color-primary mb-4">Основа для E-commerce: Связь GMC и PMax</h2>
-                <p class="text-gray-700 mb-6">Google Merchant Center (GMC) — это не просто инструмент, это фундамент для всей товарной рекламы в Google. Без него невозможно запустить Performance Max для интернет-магазина. Эта схема показывает их прямую зависимость.</p>
-                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 my-4">
-                    <div class="p-4 bg-blue-50 rounded-lg shadow-md text-center w-60">
-                        <span class="text-4xl">🛍️</span>
-                        <h3 class="font-semibold text-lg tailwind-color-primary mt-2">Ваш Магазин</h3>
-                        <p class="text-sm text-gray-600">(С онлайн-оплатой)</p>
-                    </div>
-                    <span class="text-4xl tailwind-color-secondary font-light">→</span>
-                    <div class="p-4 bg-blue-50 rounded-lg shadow-md text-center w-60">
-                        <span class="text-4xl">🏪</span>
-                        <h3 class="font-semibold text-lg tailwind-color-primary mt-2">Google Merchant Center</h3>
-                        <p class="text-sm text-gray-600">(Фид товаров)</p>
-                    </div>
-                    <span class="text-4xl tailwind-color-secondary font-light">→</span>
-                    <div class="p-4 bg-blue-50 rounded-lg shadow-md text-center w-60">
-                        <span class="text-4xl">🚀</span>
-                        <h3 class="font-semibold text-lg tailwind-color-primary mt-2">Performance Max</h3>
-                        <p class="text-sm text-gray-600">(Реклама во всех каналах)</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="bg-white rounded-lg shadow-xl p-6 md:p-8">
-                <h2 class="text-2xl font-bold tailwind-color-primary mb-4">Фаза 1: Настройка и Верификация</h2>
-                <p class="text-gray-700 mb-6">Первый и самый важный этап. Ошибки здесь приведут к полной остановке. Верификация сайта и работающая онлайн-оплата — ключ к одобрению.</p>
-                <ol class="relative border-l border-blue-300 my-4">
-                    <li class="mb-6 ml-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 tailwind-bg-accent2 rounded-full -left-4 ring-4 ring-white">
-                            <span class="text-white font-bold">1</span>
-                        </span>
-                        <h3 class="font-semibold text-lg tailwind-color-primary">Регистрация аккаунта</h3>
-                        <p class="text-sm text-gray-600">Создайте аккаунт в Google Merchant Center, используя ваш Google-аккаунт.</p>
-                    </li>
-                    <li class="mb-6 ml-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 tailwind-bg-accent2 rounded-full -left-4 ring-4 ring-white">
-                            <span class="text-white font-bold">2</span>
-                        </span>
-                        <h3 class="font-semibold text-lg tailwind-color-primary">Верификация сайта</h3>
-                        <p class="text-sm text-gray-600">Подтвердите, что вы являетесь владельцем домена (через HTML-тег, Google Analytics и т.д.).</p>
-                    </li>
-                    <li class="ml-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-red-200 rounded-full -left-4 ring-4 ring-white">
-                            <span class="text-red-700 font-bold">!</span>
-                        </span>
-                        <h3 class="font-semibold text-lg text-red-700">Ключевое требование</h3>
-                        <p class="text-sm text-gray-600">Убедитесь, что на сайте работает и корректно настроена <strong class="font-bold">онлайн-оплата</strong>. Без этого модерация не будет пройдена.</p>
-                    </li>
+        <!-- СЕКЦИЯ 0: НАСТРОЙКА API-КЛЮЧА -->
+        <div id="apiKeySetup" class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-yellow-600">⚠️ Требуется настройка AI-Ассистента</h2>
+                <button id="toggleInstructions" class="text-sm text-blue-600 hover:underline">Показать/скрыть инструкцию</button>
+            </div>
+            
+            <!-- Инструкция для студентов -->
+            <div id="instructions" class="text-gray-700 space-y-3 mb-6 bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <p class="font-semibold">Чтобы AI-Оптимизатор Фида (в Фазе 6) заработал, вам нужен бесплатный API-ключ от Google AI Studio.</p>
+                <ol class="list-decimal list-inside space-y-2">
+                    <li>Перейдите на сайт <a href="https://aistudio.google.com/" target="_blank" class="text-blue-600 font-medium hover:underline">Google AI Studio</a>.</li>
+                    <li>Войдите в свой Google-аккаунт.</li>
+                    <li>Нажмите на кнопку <strong>"Get API key"</strong> (Получить API-ключ) в меню слева.</li>
+                    <li>Нажмите <strong>"Create API key in new project"</strong> (Создать ключ в новом проекте).</li>
+                    <li>Скопируйте сгенерированный ключ (он длинный и начинается с `AIzaSy...`).</li>
+                    <li>Вставьте этот ключ в поле ниже и нажмите "Сохранить".</li>
                 </ol>
-            </section>
+                <p class="text-sm font-medium">Ваш ключ сохранится в браузере, и вам не придется вводить его снова.</p>
+            </div>
 
-            <section class="bg-white rounded-lg shadow-xl p-6 md:p-8">
-                <h2 class="text-2xl font-bold tailwind-color-primary mb-4">Фаза 2: Товарный Фид</h2>
-                <p class="text-gray-700 mb-6">Фид — это "паспорт" ваших товаров. Он сообщает Google всё, что нужно знать для их показа. Вы можете загрузить его через Google Sheets (для простоты) или XML-файл (для автоматизации).</p>
-                <h3 class="font-semibold text-lg tailwind-color-secondary mb-3">Обязательные поля в фиде:</h3>
-                <ul class="space-y-2 text-gray-700">
-                    <li class="flex items-center"><span class="text-xl mr-3">🏷️</span><strong>Название (Title):</strong> Четкое и понятное.</li>
-                    <li class="flex items-center"><span class="text-xl mr-3">📄</span><strong>Описание (Description):</strong> Подробное и релевантное.</li>
-                    <li class="flex items-center"><span class="text-xl mr-3">🖼️</span><strong>Изображения (Images):</strong> Качественные, на светлом фоне.</li>
-                    <li class="flex items-center"><span class="text-xl mr-3">💲</span><strong>Цена (Price):</strong> Точная, как на сайте.</li>
-                    <li class="flex items-center"><span class="text-xl mr-3">#️⃣</span><strong>GTIN/MPN:</strong> Глобальный номер товара (штрих-код).</li>
-                </ul>
-            </section>
-
-            <section class="bg-white rounded-lg shadow-xl p-6 md:p-8">
-                <h2 class="text-2xl font-bold tailwind-color-primary mb-4">Фаза 3: Модерация и Статусы</h2>
-                <p class="text-gray-700 mb-6">После загрузки фида товары уходят на модерацию. Этот график показывает гипотетическое распределение статусов товаров в аккаунте. Ваша цель — 100% "Одобрено".</p>
-                <div class="chart-container">
-                    <canvas id="statusChart"></canvas>
+            <!-- Поле ввода ключа -->
+            <div class="flex flex-col md:flex-row gap-4 items-end">
+                <div class="w-full">
+                    <label for="apiKeyInput" class="block text-sm font-medium text-gray-700 mb-1">Ваш Gemini API Ключ</label>
+                    <input type="password" id="apiKeyInput" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="AIzaSy...">
                 </div>
-                <ul class="mt-6 text-sm space-y-2">
-                    <li><strong class="text-green-600">Approved (Одобрено):</strong> Товар готов к показу.</li>
-                    <li><strong class="text-red-600">Disapproved (Отклонено):</strong> Товар нарушает правила (нет цены, GTIN, проблема с сайтом).</li>
-                    <li><strong class="text-yellow-600">Partially approved (Частично):</strong> Одобрен, но с ограничениями.</li>
-                </ul>
-            </section>
+                <button id="saveApiKey" class="w-full md:w-auto px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white tailwind-bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Сохранить ключ
+                </button>
+            </div>
+            <p id="apiKeyMessage" class="text-sm mt-3"></p>
+        </div>
 
-            <section class="bg-white rounded-lg shadow-xl p-6 md:p-8">
-                <h2 class="text-2xl font-bold tailwind-color-primary mb-4">Фаза 4: Оптимизация для CTR</h2>
-                <p class="text-gray-700 mb-6">Хорошо оформленные карточки (заголовок, фото, описание) напрямую влияют на CTR (кликабельность) и снижают цену за клик (CPC). Этот график сравнивает показатели для оптимизированных и неоптимизированных товаров.</p>
-                <div class="chart-container">
-                    <canvas id="optimizationChart"></canvas>
-                </div>
-            </section>
-
-            <section class="md:col-span-2 bg-white rounded-lg shadow-xl p-6 md:p-8">
-                <h2 class="text-2xl font-bold tailwind-color-primary mb-4">Фаза 5: Стратегия Запуска Кампании</h2>
-                <p class="text-gray-700 mb-6">Не спешите сразу запускать Performance Max. Алгоритму нужны данные. Рекомендуемая стратегия — начать со стандартной торговой кампании, собрать данные о конверсиях, и только потом переходить на PMax для масштабирования.</p>
-                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 my-4">
-                    <div class="p-6 bg-gray-100 rounded-lg shadow-md text-center w-full md:w-80">
-                        <span class="text-3xl">📊</span>
-                        <h3 class="font-semibold text-lg text-gray-800 mt-2">1. Стандартная Торговая Кампания</h3>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Цель:</strong> Сбор данных, обучение алгоритма, получение первых конверсий, тест фида.</p>
-                    </div>
-                    <span class="text-4xl tailwind-color-secondary font-light transform rotate-90 md:rotate-0">→</span>
-                    <div class="p-6 tailwind-bg-primary text-white rounded-lg shadow-md text-center w-full md:w-80">
-                        <span class="text-3xl">🚀</span>
-                        <h3 class="font-semibold text-lg mt-2">2. Performance Max</h3>
-                        <p class="text-sm opacity-90 mt-2"><strong>Цель:</strong> Масштабирование, автоматическое продвижение на всех каналах, рост числа конверсий.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="md:col-span-2 bg-white rounded-lg shadow-xl p-6 md:p-8">
-                <h2 class="text-2xl font-bold tailwind-color-primary mb-4">Фаза 6: Оптимизация Фида с Gemini AI ✨</h2>
-                <p class="text-gray-700 mb-6">Качество вашего фида напрямую влияет на CTR (Фаза 4). Используйте Gemini для создания более привлекательных названий и описаний товаров, чтобы выделиться среди конкурентов.</p>
-                
-                <form id="geminiOptimizeForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Фаза 1: Регистрация и Верификация -->
+        <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <div class="flex items-center mb-4">
+                <div class="step-bubble tailwind-bg-primary text-white mr-4">1</div>
+                <h2 class="text-3xl font-bold tailwind-color-primary">Фаза 1: Регистрация и Верификация</h2>
+            </div>
+            <p class="text-lg text-gray-700 mb-6">Первый шаг — создать аккаунт в Google Merchant Center (GMC) и доказать Google, что сайт принадлежит вам. Без этого товары не пройдут модерацию.</p>
+            
+            <ul class="list-none space-y-4">
+                <li class="flex items-start">
+                    <span class="text-green-500 text-2xl font-bold mr-3">✅</span>
                     <div>
-                        <label for="productTitle" class="block text-sm font-medium text-gray-700 mb-1">Текущее Название Товара</label>
-                        <input type="text" id="productTitle" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Напр: Красные кроссовки N-Model">
+                        <strong class="text-gray-900">Регистрация (Sign-up)</strong>
+                        <p class="text-gray-600">Используйте ваш бизнес-аккаунт Google. Укажите название магазина, страну и часовой пояс.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 text-2xl font-bold mr-3">✅</span>
+                    <div>
+                        <strong class="text-gray-900">Верификация Сайта (Verify)</strong>
+                        <p class="text-gray-600">Самый простой способ: через Google Analytics (если он уже стоит на сайте) или Google Tag Manager. Выбираете этот способ, и GMC автоматически находит ваш тег.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 text-2xl font-bold mr-3">✅</span>
+                    <div>
+                        <strong class="text-gray-900">Подтверждение (Claim)</strong>
+                        <p class="text-gray-600">После верификации нажмите "Подтвердить URL". Это свяжет ваш сайт с вашим аккаунтом GMC.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Фаза 2: Требования к сайту -->
+        <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <div class="flex items-center mb-4">
+                <div class="step-bubble tailwind-bg-secondary text-white mr-4">2</div>
+                <h2 class="text-3xl font-bold tailwind-color-secondary">Фаза 2: Требования к Сайту (Ключ к Модерации)</h2>
+            </div>
+            <p class="text-lg text-gray-700 mb-6">Google проверяет сайт вручную. Если он не соответствует этим правилам, аккаунт отклонят. Самая частая причина отклонения — отсутствие онлайн-оплаты.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-red-500">
+                    <strong class="text-gray-900">⛔️ Обязательная Онлайн-Оплата</strong>
+                    <p class="text-gray-600">На сайте должна быть рабочая корзина и возможность оплатить заказ картой (Stripe, Fondy, LiqPay, WayForPay и т.д.). Сайты-визитки "с оплатой по телефону" не пройдут.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-green-500">
+                    <strong class="text-gray-900">✅ Контакты и Юр. Информация</strong>
+                    <p class="text-gray-600">Добавьте страницы "Контакты" (с телефоном и адресом), "Доставка и Оплата", "Политика возврата".</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Фаза 3: Загрузка Фида -->
+        <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <div class="flex items-center mb-4">
+                <div class="step-bubble tailwind-bg-accent text-gray-800 mr-4">3</div>
+                <h2 class="text-3xl font-bold tailwind-color-accent">Фаза 3: Загрузка Фида Товаров</h2>
+            </div>
+            <p class="text-lg text-gray-700 mb-6">Фид — это "паспорт" всех ваших товаров в формате таблицы. GMC читает этот файл, чтобы узнать о ваших товарах все.</p>
+            
+            <div class="text-center">
+                <p class="text-gray-600 mb-4">Выберите способ загрузки:</p>
+                <div class="flex justify-center gap-6 flex-wrap">
+                    <div class="p-4 rounded-lg bg-blue-50 border border-blue-200">
+                        <strong class="tailwind-color-primary">Google Sheets (Рекомендуемый)</strong>
+                        <p class="text-sm">Используйте шаблон GMC, заполните его и дайте ссылку.</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-green-50 border border-green-200">
+                        <strong class="text-green-700">XML-файл (Автоматически)</strong>
+                        <p class="text-sm">CMS (WooCommerce, Shopify) генерируют его сами.</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-yellow-50 border border-yellow-200">
+                        <strong class="text-yellow-700">API (Для продвинутых)</strong>
+                        <p class="text-sm">Прямая интеграция с вашей системой.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Фаза 4: Атрибуты Фида и Модерация -->
+        <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <div class="flex items-center mb-4">
+                <div class="step-bubble tailwind-bg-primary text-white mr-4">4</div>
+                <h2 class="text-3xl font-bold tailwind-color-primary">Фаза 4: Атрибуты Фида и Модерация</h2>
+            </div>
+            <p class="text-lg text-gray-700 mb-6">Качество заполнения фида напрямую влияет на CTR и цену за клик. Не ленитесь на этом этапе.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Ключевые поля (Атрибуты):</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong class="text-gray-800">Title (Название):</strong> Самое важное. [Бренд] + [Тип товара] + [Ключ. характеристика].</li>
+                        <li><strong class="text-gray-800">Description (Описание):</strong> Подробное описание с ключевыми словами.</li>
+                        <li><strong class="text-gray-800">Image Link (Фото):</strong> Ссылка на качественное фото (800x800) на белом фоне.</li>
+                        <li><strong class="text-gray-800">Price (Цена):</strong> Должна точно совпадать с ценой на сайте.</li>
+                        <li><strong class="text-gray-800">GTIN (Штрих-код):</strong> Обязательно для брендовых товаров. Повышает доверие.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Статусы Модерации:</h3>
+                    <div class="chart-container" style="height: 200px; max-width: 300px;">
+                        <canvas id="moderationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Фаза 5: Связь с Google Ads и Запуск PMax -->
+        <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <div class="flex items-center mb-4">
+                <div class="step-bubble tailwind-bg-secondary text-white mr-4">5</div>
+                <h2 class="text-3xl font-bold tailwind-color-secondary">Фаза 5: Связь с Google Ads и Запуск PMax</h2>
+            </div>
+            <p class="text-lg text-gray-700 mb-6">Когда товары одобрены (Approved), пора запускать рекламу. Performance Max — это кампания, которая сама найдет клиентов во всех сетях Google.</p>
+            
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="text-center">
+                    <div class="text-6xl mb-2">1️⃣</div>
+                    <strong class="text-gray-900">Связь Аккаунтов</strong>
+                    <p class="text-gray-600">В GMC (Настройки -> Связанные аккаунты) отправьте запрос на связь с вашим ID Google Ads.</p>
+                </div>
+                <div class="text-4xl text-gray-300 hidden md:block">➡️</div>
+                <div class="text-center">
+                    <div class="text-6xl mb-2">2️⃣</div>
+                    <strong class="text-gray-900">Создание PMax</strong>
+                    <p class="text-gray-600">В Google Ads создайте кампанию Performance Max. Укажите свой фид из GMC как источник товаров.</p>
+                </div>
+                <div class="text-4xl text-gray-300 hidden md:block">➡️</div>
+                <div class="text-center">
+                    <div class="text-6xl mb-2">3️⃣</div>
+                    <strong class="text-gray-900">Обучение</strong>
+                    <p class="text-gray-600">Дайте кампании 1-2 недели на обучение. Не вносите резких изменений в бюджет или настройки.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Фаза 6: AI-Оптимизатор Фида (Gemini) -->
+        <div id="gemini-phase" class="bg-blue-50 rounded-lg shadow-xl p-6 md:p-8">
+            <h2 class="text-3xl font-bold mb-4 tailwind-color-primary">Фаза 6: ⚡️ AI-Оптимизатор Фида (Gemini)</h2>
+            <p class="text-lg text-gray-700 mb-6">Хорошие заголовки и описания повышают CTR. Введите текущие данные о товаре, и AI предложит улучшенные варианты.</p>
+            
+            <!-- Этот контейнер будет показан только после ввода API-ключа -->
+            <div id="gemini-content-wrapper" class="hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="productTitle" class="block text-sm font-medium text-gray-700 mb-1">Текущий Заголовок (Title)</label>
+                        <input type="text" id="productTitle" class="w-full p-3 border border-gray-300 rounded-md shadow-sm" placeholder="Напр: Красные туфли лодочки">
                     </div>
                     <div>
-                        <label for="productDescription" class="block text-sm font-medium text-gray-700 mb-1">Текущее Описание Товара</label>
-                        <textarea id="productDescription" rows="4" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Напр: Удобные кроссовки для бега, красный цвет, размер 42."></textarea>
+                        <label for="productDesc" class="block text-sm font-medium text-gray-700 mb-1">Текущее Описание (Description)</label>
+                        <input type="text" id="productDesc" class="w-full p-3 border border-gray-300 rounded-md shadow-sm" placeholder="Напр: Туфли из кожи, 38 размер.">
                     </div>
-                    <div class="md:col-span-2 text-center">
-                        <button type="submit" id="optimizeButton" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white tailwind-bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-150">
-                            ✨ Оптимизировать с Gemini
-                        </button>
-                    </div>
-                </form>
+                </div>
+
+                <button id="optimizeButton" class="w-full md:w-auto px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white tailwind-bg-secondary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Оптимизировать
+                </button>
+
+                <div id="geminiLoader" class="gemini-loader hidden"></div>
 
                 <div id="geminiResult" class="mt-6 hidden">
-                    <div id="geminiLoader" class="gemini-loader hidden"></div>
-                    <div id="geminiOutput">
-                        <div class="mb-4">
-                            <label for="optimizedTitle" class="block text-sm font-medium text-gray-900 mb-1">Оптимизированное Название</label>
-                            <textarea id="optimizedTitle" rows="2" readonly class="w-full p-2 border border-gray-300 rounded-md bg-gray-50 shadow-sm"></textarea>
+                    <p id="geminiError" class="text-red-600 text-sm my-4 text-center"></p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-lg mb-2">Новые Заголовки (Titles):</h3>
+                            <ul id="newTitles" class="list-disc list-inside space-y-2 text-gray-700 bg-white p-4 rounded-md border"></ul>
                         </div>
                         <div>
-                            <label for="optimizedDescription" class="block text-sm font-medium text-gray-900 mb-1">Оптимизированное Описание</label>
-                            <textarea id="optimizedDescription" rows="5" readonly class="w-full p-2 border border-gray-300 rounded-md bg-gray-50 shadow-sm"></textarea>
+                            <h3 class="font-semibold text-lg mb-2">Новые Описания (Descriptions):</h3>
+                            <ul id="newDescriptions" class="list-disc list-inside space-y-2 text-gray-700 bg-white p-4 rounded-md border"></ul>
                         </div>
-                        <p id="geminiError" class="text-red-600 text-sm mt-2 text-center"></p>
                     </div>
                 </div>
-            </section>
-
+            </div>
         </div>
+        
     </main>
 
     <footer class="text-center p-6 mt-8 text-gray-500 text-sm">
-        <p>Этот инфографический гайд основан на материалах Урока 4.3.</p>
+        <p>Инфографика по материалам Урока 4.3. AI-ассистент работает на базе Google Gemini.</p>
     </footer>
 
     <script>
-        function processLabel(label) {
-            if (typeof label !== 'string' || label.length <= 16) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + ' ' + word).trim().length > 16 && currentLine.length > 0) {
-                    lines.push(currentLine);
-                    currentLine = word;
-                } else {
-                    currentLine = (currentLine + ' ' + word).trim();
-                }
-            }
-            if (currentLine.length > 0) {
-                lines.push(currentLine);
-            }
-            return lines;
-        }
+        // Глобальная переменная для ключа
+        let userApiKey = '';
 
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-                return label.join(' ');
-            } else {
-                return label;
-            }
-        };
+        // Системный промпт для Gemini
+        const systemPrompt = `Ты — эксперт по Google Merchant Center и копирайтингу для e-commerce. Твоя задача — получать от пользователя текущие заголовок и описание товара и генерировать 3 УЛУЧШЕННЫХ варианта для каждого.
+        Правила:
+        1.  **Заголовки (titles):** Должны быть четкими, включать ключевые характеристики и бренд (если он угадывается). Длина — от 70 до 150 символов. Формула: [Бренд] + [Тип товара] + [Пол/Назначение] + [Ключ. Атрибут 1] + [Ключ. Атрибут 2].
+        2.  **Описания (descriptions):** Должны быть продающими, информативными, использовать ключевые слова из заголовка, упоминать выгоды. Длина — от 300 до 500 символов.
+        3.  Отвечай ТОЛЬКО в формате JSON согласно предоставленной схеме. Никакого текста до или после JSON.
+        `;
 
-        const commonChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        font: {
-                            family: "'Inter', sans-serif"
-                        }
-                    }
+        // JSON-схема для ответа
+        const responseSchema = {
+            type: "OBJECT",
+            properties: {
+                "new_titles": {
+                    "type": "ARRAY",
+                    "items": { "type": "STRING" },
+                    "description": "Массив из 3 улучшенных заголовков (70-150 символов)."
                 },
-                tooltip: {
-                    callbacks: {
-                        title: tooltipTitleCallback
-                    },
-                    titleFont: {
-                        family: "'Inter', sans-serif"
-                    },
-                    bodyFont: {
-                        family: "'Inter', sans-serif"
-                    }
+                "new_descriptions": {
+                    "type": "ARRAY",
+                    "items": { "type": "STRING" },
+                    "description": "Массив из 3 улучшенных описаний (300-500 символов)."
                 }
-            }
+            },
+            "required": ["new_titles", "new_descriptions"]
         };
 
-        window.onload = function() {
+        /**
+         * Вызов Gemini API
+         */
+        async function callGeminiAPI(userQuery, retries = 3, delay = 1000) {
+            if (!userApiKey) {
+                throw new Error("API-ключ не установлен. Пожалуйста, введите ваш ключ в секции 'Настройка API-ключа'.");
+            }
             
-            const statusCtx = document.getElementById('statusChart').getContext('2d');
-            new Chart(statusCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: [
-                        processLabel('Одобрено (Approved)'), 
-                        processLabel('Отклонено (Disapproved)'), 
-                        processLabel('Частично одобрено (Partially)')
-                    ],
-                    datasets: [{
-                        label: 'Статус Товаров',
-                        data: [80, 15, 5],
-                        backgroundColor: [
-                            '#0076CE',
-                            '#D9534F',
-                            '#F0AD4E'
-                        ],
-                        borderColor: '#FFFFFF',
-                        borderWidth: 3
-                    }]
-                },
-                options: {
-                    ...commonChartOptions,
-                    cutout: '60%'
-                }
-            });
-
-            
-            const optimizationCtx = document.getElementById('optimizationChart').getContext('2d');
-            new Chart(optimizationCtx, {
-                type: 'bar',
-                data: {
-                    labels: [processLabel('CTR (Кликабельность, %)'), processLabel('CPC (Цена за клик, $)')],
-                    datasets: [
-                        {
-                            label: 'Без оптимизации',
-                            data: [1.5, 0.50],
-                            backgroundColor: '#6BB8E7',
-                            borderColor: '#6BB8E7',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Оптимизированный товар',
-                            data: [4.5, 0.30],
-                            backgroundColor: '#004AAD',
-                            borderColor: '#004AAD',
-                            borderWidth: 1
-                        }
-                    ]
-                },
-                options: {
-                    ...commonChartOptions,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                font: {
-                                    family: "'Inter', sans-serif"
-                                }
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                font: {
-                                    family: "'Inter', sans-serif"
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
-            const geminiForm = document.getElementById('geminiOptimizeForm');
-            geminiForm.addEventListener('submit', handleGeminiSubmit);
-        };
-
-        async function callGeminiAPI(systemPrompt, userQuery, retries = 3, delay = 1000) {
-            const apiKey = ""; 
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${userApiKey}`;
 
             const payload = {
                 contents: [{ parts: [{ text: userQuery }] }],
@@ -355,14 +326,8 @@
                 },
                 generationConfig: {
                     responseMimeType: "application/json",
-                    responseSchema: {
-                        type: "OBJECT",
-                        properties: {
-                            "optimizedTitle": { "type": "STRING" },
-                            "optimizedDescription": { "type": "STRING" }
-                        },
-                        required: ["optimizedTitle", "optimizedDescription"]
-                    }
+                    responseSchema: responseSchema,
+                    temperature: 0.7
                 }
             };
 
@@ -374,9 +339,12 @@
                 });
 
                 if (!response.ok) {
+                    if (response.status === 400) {
+                        throw new Error("API Error: 400 Bad Request. Проверьте правильность вашего API-ключа.");
+                    }
                     if (response.status === 429 && retries > 0) {
                         await new Promise(resolve => setTimeout(resolve, delay));
-                        return callGeminiAPI(systemPrompt, userQuery, retries - 1, delay * 2);
+                        return callGeminiAPI(userQuery, retries - 1, delay * 2);
                     }
                     throw new Error(`API Error: ${response.status} ${response.statusText}`);
                 }
@@ -387,12 +355,16 @@
                 if (candidate && candidate.content?.parts?.[0]?.text) {
                     return JSON.parse(candidate.content.parts[0].text);
                 } else {
+                    console.error("Unexpected API response structure:", result);
+                    if (result.candidates && result.candidates[0].finishReason === "SAFETY") {
+                        throw new Error("Запрос был заблокирован по правилам безопасности Google.");
+                    }
                     throw new Error("Неожиданный формат ответа от API.");
                 }
             } catch (error) {
-                if (retries > 0) {
+                if (retries > 0 && !(error.message.includes("400"))) {
                     await new Promise(resolve => setTimeout(resolve, delay));
-                    return callGeminiAPI(systemPrompt, userQuery, retries - 1, delay * 2);
+                    return callGeminiAPI(userQuery, retries - 1, delay * 2);
                 } else {
                     console.error("Ошибка при вызове Gemini API:", error);
                     throw error;
@@ -400,60 +372,161 @@
             }
         }
 
-        async function handleGeminiSubmit(event) {
-            event.preventDefault();
-
+        /**
+         * Обработчик клика по кнопке "Оптимизировать"
+         */
+        async function handleOptimizeClick() {
             const title = document.getElementById('productTitle').value;
-            const description = document.getElementById('productDescription').value;
-            const button = document.getElementById('optimizeButton');
-            const resultContainer = document.getElementById('geminiResult');
+            const desc = document.getElementById('productDesc').value;
             const loader = document.getElementById('geminiLoader');
-            const outputContainer = document.getElementById('geminiOutput');
+            const resultContainer = document.getElementById('geminiResult');
             const errorContainer = document.getElementById('geminiError');
 
-            const optimizedTitleEl = document.getElementById('optimizedTitle');
-            const optimizedDescriptionEl = document.getElementById('optimizedDescription');
-
-            if (!title.trim() || !description.trim()) {
-                errorContainer.textContent = "Пожалуйста, заполните оба поля: название и описание.";
-                resultContainer.style.display = 'block';
-                outputContainer.style.display = 'block';
-                loader.style.display = 'none';
+            if (!title || !desc) {
+                alert("Пожалуйста, заполните оба поля: текущий заголовок и описание.");
                 return;
             }
 
-            button.disabled = true;
-            button.classList.add('opacity-50', 'cursor-not-allowed');
-            resultContainer.style.display = 'block';
-            outputContainer.style.display = 'none';
             loader.style.display = 'block';
+            resultContainer.style.display = 'none';
             errorContainer.textContent = '';
 
-            const systemPrompt = "You are an expert Google Merchant Center and SEO copywriter. Your goal is to optimize product information for Google Shopping to maximize Click-Through Rate (CTR) and relevance. You must respond ONLY with a valid JSON object according to the provided schema.";
-            const userQuery = `Optimize the following product data:\nTitle: ${title}\nDescription: ${description}\n\nProvide an optimized title and description. The title should be catchy, clear, and include key attributes (like brand, model, color, size). The description should be persuasive, detailed, and highlight key benefits for the customer.`;
+            const userQuery = `
+            Текущий заголовок: ${title}
+            Текущее описание: ${desc}
+            `;
 
             try {
-                const result = await callGeminiAPI(systemPrompt, userQuery);
+                const result = await callGeminiAPI(userQuery);
                 
-                if (result.optimizedTitle && result.optimizedDescription) {
-                    optimizedTitleEl.value = result.optimizedTitle;
-                    optimizedDescriptionEl.value = result.optimizedDescription;
-                    outputContainer.style.display = 'block';
-                } else {
-                    throw new Error("Ответ API не содержит необходимых полей.");
-                }
+                const titlesList = document.getElementById('newTitles');
+                const descriptionsList = document.getElementById('newDescriptions');
 
+                titlesList.innerHTML = '';
+                descriptionsList.innerHTML = '';
+
+                result.new_titles.forEach(item => {
+                    titlesList.innerHTML += `<li class="pb-2">${item}</li>`;
+                });
+                result.new_descriptions.forEach(item => {
+                    descriptionsList.innerHTML += `<li class="pb-2">${item}</li>`;
+                });
+
+                resultContainer.style.display = 'block';
             } catch (error) {
-                console.error(error);
-                errorContainer.textContent = "Произошла ошибка при оптимизации. Пожалуйста, попробуйте еще раз. " + error.message;
-                outputContainer.style.display = 'block';
+                errorContainer.textContent = `Произошла ошибка: ${error.message}`;
+                resultContainer.style.display = 'block'; 
             } finally {
-                button.disabled = false;
-                button.classList.remove('opacity-50', 'cursor-not-allowed');
                 loader.style.display = 'none';
             }
         }
+
+
+        /**
+         * Инициализация при загрузке страницы
+         */
+        window.onload = function() {
+
+            // --- ЛОГИКА API-КЛЮЧА ---
+            const apiKeySetup = document.getElementById('apiKeySetup');
+            const mainGenerator = document.getElementById('mainGenerator'); 
+            const saveApiKeyButton = document.getElementById('saveApiKey');
+            const apiKeyInput = document.getElementById('apiKeyInput');
+            const apiKeyMessage = document.getElementById('apiKeyMessage');
+            const toggleInstructionsButton = document.getElementById('toggleInstructions');
+            const instructions = document.getElementById('instructions');
+            const geminiContentWrapper = document.getElementById('gemini-content-wrapper');
+
+            toggleInstructionsButton.onclick = () => {
+                instructions.style.display = instructions.style.display === 'none' ? 'block' : 'none';
+            };
+
+            saveApiKeyButton.onclick = () => {
+                const key = apiKeyInput.value.trim();
+                if (key.startsWith('AIzaSy') && key.length > 30) {
+                    userApiKey = key;
+                    localStorage.setItem('geminiApiKey_gmc', key); // Используем уникальный ключ для этого приложения
+                    
+                    apiKeyMessage.textContent = 'Ключ успешно сохранен! AI-Оптимизатор активирован.';
+                    apiKeyMessage.className = 'text-sm mt-3 text-green-600';
+                    
+                    apiKeySetup.style.display = 'none';
+                    geminiContentWrapper.style.display = 'block'; 
+
+                } else {
+                    apiKeyMessage.textContent = 'Это не похоже на API-ключ Gemini. Он должен начинаться с "AIzaSy..."';
+                    apiKeyMessage.className = 'text-sm mt-3 text-red-600';
+                }
+            };
+
+            const savedKey = localStorage.getItem('geminiApiKey_gmc');
+            if (savedKey) {
+                userApiKey = savedKey;
+                apiKeyInput.value = savedKey;
+                
+                apiKeySetup.style.display = 'none';
+                geminiContentWrapper.style.display = 'block';
+            } else {
+                apiKeySetup.style.display = 'block';
+                geminiContentWrapper.style.display = 'none';
+            }
+
+            // --- ЛОГИКА КНОПКИ ОПТИМИЗАЦИИ ---
+            document.getElementById('optimizeButton').addEventListener('click', handleOptimizeClick);
+
+
+            // --- ЛОГИКА ЧАРТОВ ---
+            const ctx = document.getElementById('moderationChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        'Одобрено (Approved)',
+                        'Отклонено (Disapproved)',
+                        'На рассмотрении (Pending)'
+                    ],
+                    datasets: [{
+                        label: 'Статусы товаров',
+                        data: [70, 15, 15],
+                        backgroundColor: [
+                            '#22C55E', // green-500
+                            '#EF4444', // red-500
+                            '#F59E0B'  // yellow-500
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: 'Inter'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        };
     </script>
 </body>
 </html>
-
